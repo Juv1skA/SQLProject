@@ -3,7 +3,18 @@ INSERT INTO Category (CategoryID, CategoryName) VALUES
 (1, 'Breakfast'),
 (2, 'Lunch'),
 (3, 'Dinner'),
-(4, 'Dessert');
+(4, 'Dessert'),
+(5, 'Appetizers'),
+(6, 'Salads'),
+(7, 'Soups'),
+(8, 'Main Course'),
+(9, 'Side Dishes'),
+(10, 'Beverages'),
+(11, 'Snacks'),
+(12, 'Sandwiches'),
+(13, 'Pastas'),
+(14, 'Pizzas'),
+(15, 'Seafood');
 
 -- Inserting sample data into Recipe Table
 INSERT INTO Recipe (RecipeID, RecipeName, TotalCookingTime, CategoryID) VALUES
