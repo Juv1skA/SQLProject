@@ -1,3 +1,9 @@
+-- Category Table
+CREATE TABLE Category (
+    CategoryID INT PRIMARY KEY,
+    CategoryName VARCHAR(255) NOT NULL
+);
+
 -- Recipe Table
 CREATE TABLE Recipe (
     RecipeID INT PRIMARY KEY,
@@ -49,12 +55,6 @@ CREATE TABLE AlternativeRecipes (
     AlternativeRecipeID INT,
     FOREIGN KEY (OriginalRecipeID) REFERENCES Recipe(RecipeID),
     FOREIGN KEY (AlternativeRecipeID) REFERENCES Recipe(RecipeID)
-);
-
--- Category Table
-CREATE TABLE Category (
-    CategoryID INT PRIMARY KEY,
-    CategoryName VARCHAR(255) NOT NULL
 );
 
 -- Images Table
