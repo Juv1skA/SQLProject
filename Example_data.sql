@@ -1,4 +1,4 @@
-add more data to this: -- Inserting sample data into Category Table
+-- Inserting sample data into Category Table
 INSERT INTO Category (CategoryID, CategoryName) VALUES
 (1, 'Breakfast'),
 (2, 'Lunch'),
