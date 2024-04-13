@@ -13,7 +13,7 @@ INSERT INTO Recipe (RecipeID, RecipeName, TotalCookingTime, CategoryID) VALUES
 (4, 'Chocolate Cake', 60, 4),
 (5, 'Garlic Shrimp Appetizer', 20, 2),
 (6, 'Caesar Salad', 20, 2),
-(7, 'Tomato Basil Soup', 25, 3),
+(7, 'Tomato Basil Soup', 25, 1),
 (8, 'Beef Stroganoff', 40, 3),
 (9, 'Garlic Mashed Potatoes', 25, 2),
 (10, 'Iced Tea', 5, 4);
