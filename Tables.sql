@@ -1,7 +1,7 @@
 -- Recipe Table
 CREATE TABLE Recipe (
-    RecipeID INT PRIMARY KEY AUTO_INCREMENT,
-    RecipeName VARCHAR(255),
+    RecipeID INT PRIMARY KEY,
+    RecipeName VARCHAR(255) NOT NULL,
     TotalCookingTime INT,
     CategoryID INT,
     FOREIGN KEY (CategoryID) REFERENCES Category(CategoryID)
@@ -9,34 +9,34 @@ CREATE TABLE Recipe (
 
 -- Ingredients Table
 CREATE TABLE Ingredients (
-    IngredientID INT PRIMARY KEY AUTO_INCREMENT,
-    IngredientName VARCHAR(255),
-    Quantity VARCHAR(100),
+    IngredientID INT PRIMARY KEY,
+    IngredientName VARCHAR(255) NOT NULL,
+    Quantity VARCHAR(50),
     RecipeID INT,
     FOREIGN KEY (RecipeID) REFERENCES Recipe(RecipeID)
 );
 
 -- CookingHardware Table
 CREATE TABLE CookingHardware (
-    HardwareID INT PRIMARY KEY AUTO_INCREMENT,
-    HardwareName VARCHAR(255),
+    HardwareID INT PRIMARY KEY,
+    HardwareName VARCHAR(255) NOT NULL,
     RecipeID INT,
     FOREIGN KEY (RecipeID) REFERENCES Recipe(RecipeID)
 );
 
 -- Instructions Table
 CREATE TABLE Instructions (
-    InstructionID INT PRIMARY KEY AUTO_INCREMENT,
-    InstructionText TEXT,
+    InstructionID INT PRIMARY KEY,
+    InstructionText TEXT NOT NULL,
     RecipeID INT,
     FOREIGN KEY (RecipeID) REFERENCES Recipe(RecipeID)
 );
 
 -- AlternativeIngredients Table
 CREATE TABLE AlternativeIngredients (
-    AlternativeID INT PRIMARY KEY AUTO_INCREMENT,
+    AlternativeID INT PRIMARY KEY,
     OriginalIngredientID INT,
-    AlternativeIngredientName VARCHAR(255),
+    AlternativeIngredientName VARCHAR(255) NOT NULL,
     RecipeID INT,
     FOREIGN KEY (OriginalIngredientID) REFERENCES Ingredients(IngredientID),
     FOREIGN KEY (RecipeID) REFERENCES Recipe(RecipeID)
@@ -44,7 +44,7 @@ CREATE TABLE AlternativeIngredients (
 
 -- AlternativeRecipes Table
 CREATE TABLE AlternativeRecipes (
-    AlternativeID INT PRIMARY KEY AUTO_INCREMENT,
+    AlternativeID INT PRIMARY KEY,
     OriginalRecipeID INT,
     AlternativeRecipeID INT,
     FOREIGN KEY (OriginalRecipeID) REFERENCES Recipe(RecipeID),
@@ -53,22 +53,22 @@ CREATE TABLE AlternativeRecipes (
 
 -- Category Table
 CREATE TABLE Category (
-    CategoryID INT PRIMARY KEY AUTO_INCREMENT,
-    CategoryName VARCHAR(255)
+    CategoryID INT PRIMARY KEY,
+    CategoryName VARCHAR(255) NOT NULL
 );
 
 -- Images Table
 CREATE TABLE Images (
-    ImageID INT PRIMARY KEY AUTO_INCREMENT,
-    ImageURL VARCHAR(255),
+    ImageID INT PRIMARY KEY,
+    ImageURL VARCHAR(255) NOT NULL,
     RecipeID INT,
     FOREIGN KEY (RecipeID) REFERENCES Recipe(RecipeID)
 );
 
 -- AllergyWarnings Table
 CREATE TABLE AllergyWarnings (
-    WarningID INT PRIMARY KEY AUTO_INCREMENT,
-    AllergyWarning VARCHAR(255),
+    WarningID INT PRIMARY KEY,
+    AllergyWarning VARCHAR(255) NOT NULL,
     RecipeID INT,
     FOREIGN KEY (RecipeID) REFERENCES Recipe(RecipeID)
 );
