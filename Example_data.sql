@@ -11,12 +11,12 @@ INSERT INTO Recipe (RecipeID, RecipeName, TotalCookingTime, CategoryID) VALUES
 (2, 'Grilled Chicken Salad', 30, 2),
 (3, 'Spaghetti Bolognese', 45, 3),
 (4, 'Chocolate Cake', 60, 4),
-(5, 'Garlic Shrimp Appetizer', 20, 5),
-(6, 'Caesar Salad', 20, 6),
-(7, 'Tomato Basil Soup', 25, 7),
-(8, 'Beef Stroganoff', 40, 8),
-(9, 'Garlic Mashed Potatoes', 25, 9),
-(10, 'Iced Tea', 5, 10);
+(5, 'Garlic Shrimp Appetizer', 20, 2),
+(6, 'Caesar Salad', 20, 2),
+(7, 'Tomato Basil Soup', 25, 3),
+(8, 'Beef Stroganoff', 40, 3),
+(9, 'Garlic Mashed Potatoes', 25, 2),
+(10, 'Iced Tea', 5, 4);
 
 -- Inserting sample data into Ingredients Table
 INSERT INTO Ingredients (IngredientID, IngredientName, Quantity, RecipeID) VALUES
