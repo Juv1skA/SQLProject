@@ -71,3 +71,29 @@ FROM Recipe r
 INNER JOIN Ingredients i ON r.RecipeID = i.RecipeID
 LEFT JOIN AllergyWarnings aw ON r.RecipeID = aw.RecipeID
 WHERE i.IngredientName = 'Chicken';
+
+-- UPDATE 1
+-- Updates recipes cooking time
+UPDATE Recipe
+SET TotalCookingTime = <new_time>
+WHERE RecipeID = <recipe_id>;
+
+-- UPDATE 2
+-- Updates quantity of a ingredient
+UPDATE Ingredients
+SET Quantity = '<new_quantity>'
+WHERE IngredientID = <ingredient_id>;
+
+-- DELETE 1
+/*  This query deletes a recipe and all associated data from related tables.
+    It removes the recipe with the specified ID from the Recipe table and also deletes
+    all corresponding entries in the Ingredients, CookingHardware, Instructions, Images,
+    AllergyWarnings, AlternativeIngredients, and AlternativeRecipes tables.*/
+DELETE FROM Recipe WHERE RecipeID = <recipe_id>;
+DELETE FROM Ingredients WHERE RecipeID = <recipe_id>;
+DELETE FROM CookingHardware WHERE RecipeID = <recipe_id>;
+DELETE FROM Instructions WHERE RecipeID = <recipe_id>;
+DELETE FROM Images WHERE RecipeID = <recipe_id>;
+DELETE FROM AllergyWarnings WHERE RecipeID = <recipe_id>;
+DELETE FROM AlternativeIngredients WHERE RecipeID = <recipe_id>;
+DELETE FROM AlternativeRecipes WHERE OriginalRecipeID = <recipe_id> OR AlternativeRecipeID = <recipe_id>;
