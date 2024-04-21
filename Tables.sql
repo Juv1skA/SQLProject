@@ -1,3 +1,4 @@
+--test vaino
 -- Category Table
 CREATE TABLE Category (
     CategoryID INT PRIMARY KEY,
